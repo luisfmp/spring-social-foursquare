@@ -169,4 +169,8 @@ public class VenueTemplate extends AbstractFoursquareOperations implements Venue
 		post(buildUri(VENUES_ENDPOINT + venueId + "/proposeedit"), params, Map.class);
 	}
 
+	public List<Venue> getManaged() {
+		return get(buildUri(VENUES_ENDPOINT + "managed"), VenueSearchContainer.class).getVenues();
+	}
+
 }

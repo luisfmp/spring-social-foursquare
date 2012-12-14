@@ -32,13 +32,16 @@ public class TipTemplate extends AbstractFoursquareOperations implements TipOper
 		return post(buildUri(TIPS_ENDPOINT + "add"), params, TipContainer.class).getTip();
 	}
 
-	public List<Tip> search(Double latitude, Double longitude, String query, Integer offset, boolean friendsOnly) {
+	public List<Tip> search(Double latitude, Double longitude, String query,Integer limit, Integer offset, boolean friendsOnly) {
 		Map<String,String> params = new HashMap<String,String>();
 		if(latitude != null && longitude != null) {
 			params.put("ll", latitude.toString() + "," + longitude.toString());
 		}
 		if(query != null) {
 			params.put("query", query);
+		}
+		if(limit != null) {
+			params.put("limit", limit.toString());
 		}
 		if(offset != null) {
 			params.put("offset", offset.toString());

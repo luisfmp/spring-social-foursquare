@@ -13,6 +13,13 @@ public interface VenueOperations {
 	Venue getVenue(String venueId);
 	
 	/**
+	 * Retrieve the managed venues for the logged in user
+	 * @see https://developer.foursquare.com/docs/venues/managed
+	 * @return	Venues
+	 */
+	List<Venue> getManaged();
+	
+	/**
 	 * Add a venue to Foursquare. All fields are optional, but one of either a valid address 
 	 * or a geolat/geolong pair must be provided. It's reecommended that geolat/geolong pair 
 	 * is provided in every case. 

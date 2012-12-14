@@ -21,6 +21,7 @@ public class VenueSearchParams {
     private String url;
     private String providerId;
     private String linkedId;
+    private Integer radius;
 
     public String getLinkedId() {
         return linkedId;
@@ -125,6 +126,14 @@ public class VenueSearchParams {
         this.intent = intent;
         return this;
     }
+    
+    public Integer getRadius() {
+		return radius;
+	}
+
+	public void setRadius(Integer radius) {
+		this.radius = radius;
+	}
 
     public Map<String, String> toParameters() {
         Map<String, String> params = new HashMap<String, String>();
@@ -160,6 +169,9 @@ public class VenueSearchParams {
         }
         if (linkedId != null) {
             params.put("linkedId", linkedId);
+        }
+        if (radius != null){
+        	params.put("radius",radius.toString());
         }
         return params;
     }

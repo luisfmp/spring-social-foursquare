@@ -29,7 +29,7 @@ public interface TipOperations {
 	 * @param friendsOnly	Show only tips from friends
 	 * @return	A list of tips
 	 */
-	List<Tip> search(Double latitude, Double longitude, String query, Integer offset, boolean friendsOnly);
+	List<Tip> search(Double latitude, Double longitude, String query, Integer limit, Integer offset, boolean friendsOnly);
 	
 	/**
 	 * Mark a tip for the authenticated user as something they should do
